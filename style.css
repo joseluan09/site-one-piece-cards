@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.galaxy {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+  z-index: -1;
+}
+
+.stars, .stars2, .stars3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: moveStars 100s linear infinite;
+}
+
+.stars::after,
+.stars2::after,
+.stars3::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  box-shadow: 
+    20px 30px white,
+    100px 80px white,
+    200px 150px white,
+    300px 250px white,
+    400px 400px white;
+  opacity: 0.2;
+}
+
+.stars2 {
+  animation-duration: 150s;
+  opacity: 0.1;
+}
+
+.stars3 {
+  animation-duration: 200s;
+  opacity: 0.05;
+}
+
+@keyframes moveStars {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
+}
+
+.twinkle {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkleAnim 5s ease-in-out;
+}
+
+@keyframes twinkleAnim {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
