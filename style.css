@@ -138,3 +138,56 @@ footer {
   color: #ccc;
   font-style: italic;
 }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cards img {
+  width: 250px; /* Tamanho padrão das cartas */
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px; /* Cantos arredondados (opcional) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombrinha top */
+  transition: transform 0.2s ease-in-out;
+}
+
+.cards img:hover {
+  transform: scale(1.05); /* Animação suave ao passar o mouse */
+}
+
+/* Visualização ampliada */
+.card-preview {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.card-preview img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1000;
+}

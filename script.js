@@ -21,3 +21,32 @@ function createStar() {
 }
 
 setInterval(createStar, 300);
+
+// -------- Cartas --------
+
+const cards = document.querySelectorAll('.card');
+const preview = document.getElementById('cardPreview');
+const previewImg = document.getElementById('previewImage');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    preview.style.display = 'flex';
+    previewImg.src = card.src;
+    previewImg.alt = card.alt;
+    void previewImg.offsetWidth;
+    preview.classList.add('show');
+  });
+});
+
+function closePreview() {
+  preview.classList.remove('show');
+  setTimeout(() => {
+    preview.style.display = 'none';
+  }, 300);
+}
+
+preview.addEventListener('click', (e) => {
+  if (e.target === preview) {
+    closePreview();
+  }
+});
